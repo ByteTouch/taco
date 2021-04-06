@@ -11,15 +11,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/ingredients")
-public class IngredientController {
+public class IngredientsController {
 
     private IngredientServiceClient client;
 
     @Autowired
-    public IngredientController(
+    public IngredientsController(
             @Qualifier("reactiveClient") IngredientServiceClient client)
     {
         this.client = client;
+    }
+
+    @GetMapping
+    public String ingredientListPage(Model model) {
+        model.addAttribute("ingredients", client.getAllIngredient());
+        return "ingredientList";
     }
 
     @GetMapping("/{id}")

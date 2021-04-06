@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
+
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Service("reactiveClient")
@@ -19,8 +21,13 @@ public class IngredientServiceClient {
 
     public Mono<Ingredient> getIngredientById(String id) {
         return wcBuilder.build()
-                .get()
-                    .uri("http://ingredient-api/ingredients/{id}", id)
+                .get().uri("http://ingredient-api/ingredients/{id}", id)
                 .retrieve().bodyToMono(Ingredient.class);
+    }
+
+    public Flux<Ingredient> getAllIngredient() {
+        return wcBuilder.build()
+                .get().uri("http://ingredient-api/ingredients")
+                .retrieve().bodyToFlux(Ingredient.class);
     }
 }

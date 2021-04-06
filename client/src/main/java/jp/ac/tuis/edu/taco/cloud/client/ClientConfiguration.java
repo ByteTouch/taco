@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
 
-@EnableFeignClients
+//@EnableFeignClients
 @Configuration
 public class ClientConfiguration {
 
@@ -18,7 +18,7 @@ public class ClientConfiguration {
     }
 
     @Bean
-    @LoadBalanced
+    //@LoadBalanced
     public RestTemplate rest() {
         return new RestTemplate();
     }
