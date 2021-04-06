@@ -1,6 +1,6 @@
 spring:
     application:
-        name: ingredient-service
+        name: ingredient-api
 
 eureka:
     instance:
