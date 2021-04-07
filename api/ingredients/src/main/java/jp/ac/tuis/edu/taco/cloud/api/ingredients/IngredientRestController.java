@@ -1,7 +1,10 @@
+/* This controller is not necessary now because of spring-boot-start-data-rest.
+
 package jp.ac.tuis.edu.taco.cloud.api.ingredients;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -11,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path = "/ingredients", produces = "application/json")
+@RequestMapping(produces = "application/json")
 @CrossOrigin(origins = "*")
 public class IngredientRestController {
     
@@ -22,13 +25,20 @@ public class IngredientRestController {
         this.repo = repo;
     }
 
-    @GetMapping
+    @GetMapping("/ingredients")
     public Iterable<Ingredient> allIngredients() {
-        return repo.findAll().toIterable();
+        return repo.findAll();
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Ingredient> ingredientById(@PathVariable String id) {
-        return new ResponseEntity<>(repo.findById(id).block(), new HttpHeaders(), HttpStatus.OK);
+    @GetMapping("/ingredients/{id}")
+    public ResponseEntity<Ingredient> ingredientById(@PathVariable("id") String id) {
+        Optional<Ingredient> optIngredient = repo.findById(id);
+        if (optIngredient.isPresent()) {
+            return new ResponseEntity<>(optIngredient.get(), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        }
+
     }
 }
+*/

@@ -1,7 +1,8 @@
 package jp.ac.tuis.edu.taco.cloud.api.ingredients;
 
-import org.springframework.data.repository.reactive.ReactiveCrudRepository;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
-public interface IngredientRepository extends ReactiveCrudRepository<Ingredient, String> {
-    
+@CrossOrigin(origins = "*")
+public interface IngredientRepository extends CrudRepository<Ingredient, String> { 
 }
