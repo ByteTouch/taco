@@ -25,6 +25,7 @@
 		<module>api/ingredients</module>
 		<module>registry</module>
 		<module>client</module>
+		<module>config</module>
 	</modules>
 
 	<dependencyManagement>
