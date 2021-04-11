@@ -1,12 +1,11 @@
 spring:
     application:
         name: ingredient-api
+    config:
+        import: optional:configserver:http://localhost:8888
     jpa:
         hibernate:
             ddl-auto: none
-    cloud:
-        config:
-            uri: http://localhost:8888
     dataSource:
         url: jdbc:h2:mem:testdb
         username: sa
