@@ -1,13 +1,2 @@
-spring:
-    cloud:
-        config:
-            server:
-                git:
-                    uri: https://github.com/ByteTouch/taco
-                    default-label: main
-                    search-paths: properties
-                    username: ByteTouch
-                    password: nKEjW649
-
 server:
     port: 8888
