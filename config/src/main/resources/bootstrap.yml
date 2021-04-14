@@ -1,17 +1,6 @@
 spring:
     application:
         name: config-server
-    cloud:
-        config:
-            server:
-                git:
-                    uri: https://github.com/ByteTouch/taco
-                    default-label: main
-                    search-paths: properties
-                    username: ByteTouch
-                    password: '{cipher}AQA127EkSh4fZp61wWqJdfVCqcbuHGGXmGCosZcr3Hjx/ApFkM0XKUSHNOLE1cfHyzSN6qhWkneoDqqxlC5QSx7F8WRCzvP2ozgrMg0yGMmmt4L2Qg3TRYsawa5YgIUTANSZrknp1t6rgOISsJLTaYSDIix5S9/5CNLJrDtVl7p3pROi5UK7hy5fBmx6FAfBWIs4Q3vWVuW7FusLz3+Y8tHml7XjVKTmHEzR48zLRlERQA+YN9ciJh+vfohiusgfsWH+xScwLU+Dnem8j0NCMWTW1vzmFNwMnwRg3kjf7IR2/JZof1ew4tcS+1iYH6pvTLSVHkyX3k85YYKV5N1YwaUttDCFlvqZrlMTah0xqgPWxXhamiMwQAE6iCdsFODe1eU='
-                encrypt:
-                    enabled: false
 
 encrypt:
     key-store:
