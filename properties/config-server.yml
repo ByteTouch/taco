@@ -1,6 +1,0 @@
-spring:
-    rabbitmq:
-        host: http://192.168.4.78
-        port: 5672
-        username: TacoCloud
-        password: changeme
