@@ -9,6 +9,7 @@ spring:
     cloud:
         config:
             server:
+                bootstrap: true
                 git:
                     uri: https://github.com/ByteTouch/taco
                     default-label: main
