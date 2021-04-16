@@ -6,10 +6,14 @@ spring:
         active:
 #        - vault
         - git
+    rabbitmq:
+        host: 192.168.4.78
+        port: 5672
+        username: TacoCloud
+        password: changeme
     cloud:
         config:
             server:
-                bootstrap: true
                 git:
                     uri: https://github.com/ByteTouch/taco
                     default-label: main

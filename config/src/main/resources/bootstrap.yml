@@ -7,4 +7,4 @@ encrypt:
         alias: mytestkey
         location: classpath:server.jks
         password: changeme
-        secret: changeme   
+        secret: changeme
