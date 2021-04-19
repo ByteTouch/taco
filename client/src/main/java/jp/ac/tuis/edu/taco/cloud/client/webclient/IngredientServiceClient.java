@@ -25,7 +25,7 @@ public class IngredientServiceClient {
                 .retrieve().bodyToMono(Ingredient.class);
     }
 
-    public Flux<Ingredient> getAllIngredient() {
+    public Flux<Ingredient> getAllIngredients() {
         return wcBuilder.build()
                 .get().uri("http://ingredient-api/ingredients")
                 .retrieve().bodyToFlux(Ingredient.class);
