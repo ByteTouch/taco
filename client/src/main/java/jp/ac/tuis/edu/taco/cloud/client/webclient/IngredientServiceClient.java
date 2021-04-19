@@ -1,8 +1,13 @@
 package jp.ac.tuis.edu.taco.cloud.client.webclient;
 
 import jp.ac.tuis.edu.taco.cloud.client.Ingredient;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -30,4 +35,19 @@ public class IngredientServiceClient {
                 .get().uri("http://ingredient-api/ingredients")
                 .retrieve().bodyToFlux(Ingredient.class);
     }
+
+    /*
+    @Nullable
+    public Mono<Ingredient> ingredientNotFound(String id) {
+        return null;
+    }
+
+    public Flux<Ingredient> defaultIngredients() {
+        List<Ingredient> ingredients = new ArrayList<>();
+        ingredients.add(new Ingredient("FLTO", "Flour Tortilla", Ingredient.Type.WRAP));
+        ingredients.add(new Ingredient("GRBF", "Ground Beef", Ingredient.Type.PROTEIN));
+        ingredients.add(new Ingredient("CHED", "Shredded Cheddar", Ingredient.Type.CHEESE));
+        return Flux.fromIterable(ingredients);
+    }
+    */
 }

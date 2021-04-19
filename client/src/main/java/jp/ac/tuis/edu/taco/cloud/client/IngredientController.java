@@ -1,8 +1,7 @@
 package jp.ac.tuis.edu.taco.cloud.client;
 
 import jp.ac.tuis.edu.taco.cloud.client.webclient.IngredientServiceClient;
-
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import reactor.core.publisher.Mono;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -32,13 +31,12 @@ public class IngredientController {
     }
 
     @GetMapping("/{id}")
-    @HystrixCommand(fallbackMethod = "IngredientNotFoundPage")
     public String ingredientDetailPage(@PathVariable("id") String id, Model model) {
-        model.addAttribute("ingredient", client.getIngredientById(id));
+        Mono<Ingredient> ingredient = client.getIngredientById(id);
+        if (ingredient == null) {
+            return "ingredientNotFound";
+        }
+        model.addAttribute("ingredient", ingredient);
         return "ingredientDetail";
-    }
-
-    public String defaultIngredientDetailPage() {
-        return "ingredientNotFound";
     }
 }
