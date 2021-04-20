@@ -4,5 +4,4 @@ server:
 management:
     endpoints:
         web:
-            base-path: /management
-            
+            base-path: /management         
