@@ -1,2 +1,7 @@
 server:
     port: 8086
+
+management:
+    endpoints:
+        web:
+            base-path: /management
