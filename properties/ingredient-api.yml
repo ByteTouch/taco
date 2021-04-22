@@ -4,4 +4,13 @@ server:
 management:
     endpoints:
         web:
-            base-path: /management         
+            base-path: /actuator
+            exposure:
+                include: '*'
+    endpoint:
+        health:
+            show-details: always
+
+info:
+    author: Wan Cheng
+    email: j18467tw@edu.tuis.ac.jp
