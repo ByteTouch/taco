@@ -1,16 +1,2 @@
 server:
     port: 8086
-
-management:
-    endpoints:
-        web:
-            base-path: /actuator
-            exposure:
-                include: '*'
-    endpoint:
-        health:
-            show-details: always
-
-info:
-    author: Wan Cheng
-    email: j18467tw@edu.tuis.ac.jp

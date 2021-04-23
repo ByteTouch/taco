@@ -1,6 +1,5 @@
-package jp.ac.tuis.edu.taco.cloud.client;
+package jp.ac.tuis.edu.taco.admin;
 
-import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.reactive.ReactorClientHttpConnector;
@@ -9,17 +8,14 @@ import org.springframework.web.reactive.function.client.WebClient;
 import io.netty.resolver.DefaultAddressResolverGroup;
 import reactor.netty.http.client.HttpClient;
 
-//@EnableFeignClients
 @Configuration
-public class ClientConfiguration {
+public class WebClientConfig {
 
     @Bean
-    @LoadBalanced
     public WebClient.Builder webClientBuilder() {
-        /* 当存在其它异常时，可能会被hostname解析异常掩盖。移除该注释。
-        return WebClient.builder();     */
-
         HttpClient httpClient = HttpClient.create().resolver(DefaultAddressResolverGroup.INSTANCE);
         return WebClient.builder().clientConnector(new ReactorClientHttpConnector(httpClient));
     }
 }
+
+/* default webclient is shit */

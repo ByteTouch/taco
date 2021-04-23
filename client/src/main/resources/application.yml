@@ -4,3 +4,12 @@ spring:
     config:
         import: optional:configserver:http://localhost:8888
     
+management:
+    endpoints:
+        web:
+            base-path: /actuator
+            exposure:
+                include: '*'
+    endpoint:
+        health:
+            show-details: always

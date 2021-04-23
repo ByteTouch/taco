@@ -12,3 +12,17 @@ spring:
         port: 5672
         username: TacoCloud
         password: changeme
+
+management:
+    endpoints:
+        web:
+            base-path: /actuator
+            exposure:
+                include: '*'
+    endpoint:
+        health:
+            show-details: always
+
+info:
+    author: Wan Cheng
+    email: j18467tw@edu.tuis.ac.jp
