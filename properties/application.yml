@@ -7,11 +7,14 @@ server:
     port: 0   
     
 spring:
-    rabbitmq:
-        host: 192.168.4.77
-        port: 5672
-        username: TacoCloud
-        password: changeme
+#    rabbitmq:
+#        host: 192.168.4.77
+#        port: 5672
+#        username: TacoCloud
+#        password: changeme
+    kafka:
+        bootstrap-servers:
+        - 172.22.210.62:9092
 
 management:
     endpoints:

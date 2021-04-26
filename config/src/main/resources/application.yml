@@ -6,11 +6,14 @@ spring:
         active:
 #        - vault
         - git
-    rabbitmq:
-        host: 192.168.4.77
-        port: 5672
-        username: TacoCloud
-        password: changeme
+#    rabbitmq:
+#        host: 192.168.4.77
+#        port: 5672
+#        username: TacoCloud
+#        password: changeme
+    kafka:
+        bootstrap-servers:
+        - 172.22.210.62:9092
     cloud:
         config:
             server:
