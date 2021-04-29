@@ -7,4 +7,4 @@ VOLUME [ "/data" ]
 COPY ${DEPENDENCY}/BOOT-INF/lib app/lib
 COPY ${DEPENDENCY}/META-INF /app/META
 COPY ${DEPENDENCY}/BOOT-INF/classes /app
-ENTRYPOINT ["java", "-cp", "app:app/lib/*", "jp.ac.tuis.edu.taco.cloud.api.ingredients.IngredientApplication"]
+ENTRYPOINT ["java", "-cp", "app:app/lib/*", "jp.ac.tuis.edu.taco.cloud.api.ingredients.IngredientsApplication"]
