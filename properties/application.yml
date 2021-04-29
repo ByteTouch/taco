@@ -1,7 +1,7 @@
 eureka:
     client:
         service-url:
-            defaultZone: http://localhost:8761/eureka
+            defaultZone: http://172.18.0.5:8761/eureka
 
 server:
     port: 0   
@@ -14,7 +14,7 @@ spring:
 #        password: changeme
     kafka:
         bootstrap-servers:
-        - localhost:9092
+        - 172.18.0.3:9092
     security:
         user:
             name: admin

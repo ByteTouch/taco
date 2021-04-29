@@ -1,4 +1,4 @@
-package jp.ac.tuis.edu.taco.admin;
+package jp.ac.tuis.edu.taco.cloud.admin;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
