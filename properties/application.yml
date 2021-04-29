@@ -14,7 +14,11 @@ spring:
 #        password: changeme
     kafka:
         bootstrap-servers:
-        - 172.22.210.62:9092
+        - localhost:9092
+    security:
+        user:
+            name: admin
+            password: letmein
 
 management:
     endpoints:

@@ -5,6 +5,10 @@ spring:
 eureka:
     instance:
         hostname: localhost
+        metadata-map:
+            user:
+                name: admin
+                password: letmein
     server:
         enable-self-preservation: false
     client:
@@ -15,3 +19,17 @@ eureka:
 
 server:
     port: 8761
+
+management:
+    endpoints:
+        web:
+            base-path: /actuator
+            exposure:
+                include: health, info
+    endpoint:
+        health:
+            show-details: always
+
+info:
+    author: Wan Cheng
+    email: j18467tw@edu.tuis.ac.jp

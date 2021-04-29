@@ -4,6 +4,11 @@ server:
 spring:
     application:
         name: admin
+    security:
+        user:
+            name: admin
+            password: letmein
+
 eureka:
     instance:
         leaseRenewalIntervalInSeconds: 10
@@ -18,8 +23,13 @@ eureka:
 management:
     endpoints:
         web:
+            base-path: /actuator
             exposure:
-                include: '*'
+                include: health, info
     endpoint:
         health:
             show-details: always
+
+info:
+    author: Wan Cheng
+    email: j18467tw@edu.tuis.ac.jp
