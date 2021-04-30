@@ -24,7 +24,7 @@
 	<modules>
 		<module>api/ingredients</module>
 		<module>registry</module>
-		<module>client</module>
+		<module>service</module>
 		<module>config</module>
 		<module>admin</module>
 	</modules>
