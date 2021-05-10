@@ -10,14 +10,14 @@ import io.netty.resolver.DefaultAddressResolverGroup;
 import reactor.netty.http.client.HttpClient;
 
 //@EnableFeignClients
+/* 当存在其它异常时，可能会被hostname解析异常掩盖。移除该注释。
+        return WebClient.builder();     */
 @Configuration
 public class ClientConfiguration {
 
     @Bean
     @LoadBalanced
     public WebClient.Builder webClientBuilder() {
-        /* 当存在其它异常时，可能会被hostname解析异常掩盖。移除该注释。
-        return WebClient.builder();     */
 
         HttpClient httpClient = HttpClient.create().resolver(DefaultAddressResolverGroup.INSTANCE);
         return WebClient.builder().clientConnector(new ReactorClientHttpConnector(httpClient));

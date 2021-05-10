@@ -5,12 +5,16 @@ import reactor.core.publisher.Mono;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.EntityModel;
-import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
+import org.springframework.hateoas.Link;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import static org.springframework.hateoas.server.reactive.WebFluxLinkBuilder.*;
+
 @RestController
+@RequestMapping(path = "/", produces = "application/hal+json")
 public class ServiceController {  
     
     private IngredientServiceClient ingredientClient;
@@ -23,8 +27,10 @@ public class ServiceController {
     @GetMapping("/ingredients/{id}")
     public Mono<EntityModel<Ingredient>> getIngredientById(@PathVariable("id") String id) {
         return ingredientClient.getIngredientById(id)
-            .map(ingredient -> {
-                return EntityModel.of(ingredient, WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(ServiceController.class).getIngredientById(id)).withRel(ingredient.getName()));
+            .flatMap(ingredient -> {
+                EntityModel<Ingredient> model = EntityModel.of(ingredient);
+                Mono<Link> link = linkTo(methodOn(ServiceController.class).getIngredientById(id)).withSelfRel().toMono();
+                return link.map(lk -> model.add(lk));
             });
     }
 }
