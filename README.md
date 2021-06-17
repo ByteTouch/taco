@@ -7,4 +7,4 @@ If you want to start it, make sure that the application.yml files are fit for yo
 
 For security, I've been keeping it private. Because the unencoded password in the application.yml file maybe remains in the commit history.But now I need to show it for finding a job.
 
-~~ But I've never eat tacos yet ~~
+~~ However, I've never eat tacos yet ~~
