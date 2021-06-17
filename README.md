@@ -1,4 +1,8 @@
 # taco
-some source code from &lt;Spring In Action 5e>
+The source code is referenced from the book &lt;Spring In Action 5e>
 
-~~ I've never eat any tacos yet ~~
+I customized some functionalities.
+
+For security, I've been keeping it private. But now I need to show it for finding a job.
+
+~~ But I've never eat tacos yet ~~
