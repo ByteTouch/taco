@@ -1,7 +1,7 @@
 # taco
 The source code is referenced from the book &lt;Spring In Action 5e>
 
-I customized and add some functionalities. 
+I've customized some components and added some features including distribution, modularization, containerization and so forth. 
 
 If you want to start it, make sure that the configurations in application.yml files or application.properties files are fit for your environment. You can simply test it in VSCode with the related plugin. In spring dashboard, you need first to start the "config" module and "registry" module before others.
 
