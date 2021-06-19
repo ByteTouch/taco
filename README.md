@@ -1,5 +1,5 @@
 # taco
-The source code is referenced from the book &lt;Spring In Action 5e>
+The source code is referenced from the book &lt;Spring In Action, 5th Edition>
 
 I've customized some components and added some features including distribution, modularization, containerization and so forth. 
 
